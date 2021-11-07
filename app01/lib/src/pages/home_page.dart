@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  final estilo = const TextStyle(fontSize: 25.0);
-  final int contador = 0;
+  final _estilo = const TextStyle(fontSize: 25.0);
+  final int _contador = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,11 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               "Número de clicks",
-              style: estilo,
+              style: _estilo,
             ),
             Text(
-              '$contador',
-              style: estilo,
+              '$_contador',
+              style: _estilo,
             )
           ],
         ),
