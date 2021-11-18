@@ -30,6 +30,8 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1() {
     return Card(
+      elevation: 1.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: [
           const ListTile(
@@ -59,21 +61,35 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
-      child: Column(
-        children: [
-          const FadeInImage(
-            placeholder: AssetImage('assets/jar-loading.gif'),
-            image: NetworkImage(
-                'https://thelandscapephotoguy.com/wp-content/uploads/2019/01/landscape%20new%20zealand%20S-shape.jpg'),
-            fadeInDuration: Duration(milliseconds: 200),
-            height: 250,
-            fit: BoxFit.cover,
-          ),
-          Container(
-              padding: const EdgeInsets.all(10.0),
-              child: const Text('No se que poner.'))
-        ],
+    final card = Column(
+      children: [
+        const FadeInImage(
+          placeholder: AssetImage('assets/jar-loading.gif'),
+          image: NetworkImage(
+              'https://thelandscapephotoguy.com/wp-content/uploads/2019/01/landscape%20new%20zealand%20S-shape.jpg'),
+          fadeInDuration: Duration(milliseconds: 200),
+          height: 250,
+          fit: BoxFit.cover,
+        ),
+        Container(
+            padding: const EdgeInsets.all(10.0),
+            child: const Text('No se que poner.'))
+      ],
+    );
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20.0),
+          color: Colors.white,
+          boxShadow: const [
+            BoxShadow(
+                color: Colors.black26,
+                blurRadius: 10.0,
+                spreadRadius: 2.0,
+                offset: Offset(2.0, 10.0))
+          ]),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20.0),
+        child: card,
       ),
     );
   }
